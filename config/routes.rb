@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root 'static_pages#home'
+  get 'signup' => 'static_pages#signup'
 
   namespace :api do
     # USERS
@@ -19,4 +20,5 @@ Rails.application.routes.draw do
   end
 
   get '*path' => 'static_pages#home'
+
 end
