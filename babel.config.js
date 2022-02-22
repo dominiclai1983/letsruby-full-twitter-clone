@@ -80,6 +80,6 @@ module.exports = function(api) {
           removeImport: true
         }
       ]
-    ].filter(Boolean)
+    ].filter(Boolean),
   }
 }

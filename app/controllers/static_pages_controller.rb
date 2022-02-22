@@ -6,4 +6,8 @@ class StaticPagesController < ApplicationController
   def signup
     render 'signup'
   end
+
+  def login
+    render 'login'
+  end
 end
