@@ -9,7 +9,7 @@ import './home.scss';
 
 const Home = () => (
   <React.Fragment>
-    <i class="fab fa-twitter fa-5x"></i>
+    <i className="fab fa-twitter fa-5x"></i>
     <h1>Happening now</h1>
     <h3>Join Twitter today.</h3>
     <Link to="/signup">
@@ -17,7 +17,7 @@ const Home = () => (
     </Link>
     <h5>Already have an account?</h5>
     <Link to="/login"> 
-      <button type="button" class="btn btn-secondary btn-lg btn-block">Sign in</button>
+      <button type="button" className="btn btn-secondary btn-lg btn-block">Sign in</button>
     </Link>      
   </React.Fragment>
 )
