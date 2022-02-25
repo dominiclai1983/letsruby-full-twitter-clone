@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useState, useEffect} from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Layout from './layout';
 import Signup from './signup';
 import Login from './login';
+import $ from 'jquery';
 
 import './home.scss';
 
@@ -23,6 +24,41 @@ const Home = () => (
 )
 
 const App = () => {
+
+  const [login, setLogin] = useState(false)
+
+  useEffect(() => {
+    loginStatus();
+  },[login]);
+
+  const loginStatus = () => {
+
+    const token = localStorage.getItem('token');
+
+    var request = {
+      type: 'GET',
+      url: 'api/authenticated',
+      headers: {
+        'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
+      },
+      data:{
+        token: token
+      },
+      success: function (response) {
+        setLogin(!login);
+        window.location.href = '/tweet';
+
+      },
+      error: function (request, errorMsg) {
+        console.log(request, errorMsg);
+        console.log("error");
+      }
+    }
+
+    $.ajax(request);
+  }
+
+
   return (
     <BrowserRouter>
     <Layout>

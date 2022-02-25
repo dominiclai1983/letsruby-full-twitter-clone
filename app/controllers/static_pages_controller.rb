@@ -10,4 +10,9 @@ class StaticPagesController < ApplicationController
   def login
     render 'login'
   end
+
+  def tweet
+    redner 'tweet'
+  end
+
 end
